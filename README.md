@@ -19,7 +19,12 @@ This repository packages work originally completed as part of Western Governors 
 - `data/medical_clean_task2.csv`
 - `requirements.txt`
 
+## Selected Visuals
+
+![Classification report visual](assets/task1-report-extracts/report_image_01.png)
+
+![Clustering and PCA report visual](assets/task2-report-extracts/report_image_01.png)
+
 ## Suggested Next Additions
 - a short summary comparing the classification and clustering goals
 - key performance metrics from the classification task
-- cluster plot and PCA projection screenshots
