@@ -15,9 +15,15 @@ This repository packages work originally completed as part of Western Governors 
 ## Included Files
 - `notebooks/Task-1.ipynb`
 - `notebooks/Task-2.ipynb`
-- `data/medical_clean_task1.csv`
-- `data/medical_clean_task2.csv`
+- `data/medical_clean.csv`
 - `requirements.txt`
+
+## Results
+
+- Random Forest classification achieved test accuracy of `0.979`, precision of `0.963`, recall of `0.980`, F1-score of `0.971`, and ROC-AUC of `0.999` after tuning.
+- The clustering workflow used the Elbow Method to select `k = 3` as the optimal number of patient segments.
+- PCA visualization showed three distinguishable clusters with reasonable separation rather than randomly mixed groupings.
+- The resulting cluster profiles represented lower-risk younger patients with shorter stays, moderate-risk patients with longer stays and higher charges, and higher-risk older patients with more chronic conditions and higher additional charges.
 
 ## Selected Visuals
 
