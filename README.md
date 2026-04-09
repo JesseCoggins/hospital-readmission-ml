@@ -13,8 +13,8 @@ This repository packages work originally completed as part of Western Governors 
 - PCA-based dimensionality reduction and visualization
 
 ## Included Files
-- `notebooks/Task-1.ipynb`
-- `notebooks/Task-2.ipynb`
+- `notebooks/readmission_classification.ipynb`
+- `notebooks/readmission_clustering_pca.ipynb`
 - `data/medical_clean.csv`
 - `requirements.txt`
 
