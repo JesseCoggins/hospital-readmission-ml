@@ -30,7 +30,3 @@ This project was completed as part of my M.S. in Data Analytics program at Weste
 ![Classification report visual](assets/task1-report-extracts/report_image_01.png)
 
 ![Clustering and PCA report visual](assets/task2-report-extracts/report_image_01.png)
-
----
-
-*\* I used Claude (Anthropic) to help organize and stage this coursework into a GitHub portfolio repository. The analysis, code, and results are entirely my own.*
