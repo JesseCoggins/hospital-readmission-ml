@@ -12,3 +12,10 @@ env/
 *.egg-info/
 build/
 dist/
+notebooks/X_train.csv
+notebooks/X_val.csv
+notebooks/X_test.csv
+notebooks/y_train.csv
+notebooks/y_val.csv
+notebooks/y_test.csv
+notebooks/medical_cleaned_encoded.csv

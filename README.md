@@ -3,8 +3,8 @@
 ## Overview
 This repo combines two machine learning workflows built from the hospital dataset: a supervised classification project and an unsupervised clustering and PCA project. Together, they show breadth across predictive modeling and pattern discovery in healthcare data.
 
-## Coursework Context
-This project was completed as part of my M.S. in Data Analytics program at Western Governors University (WGU). Screenshots from the original written submissions are preserved in `assets/task1-report-extracts/` and `assets/task2-report-extracts/`.
+## Academic Context
+Completed during my M.S. in Data Analytics at Western Governors University (WGU), then packaged here as a public portfolio project. Screenshots from the original written submissions are preserved in `assets/task1-report-extracts/` and `assets/task2-report-extracts/`.
 
 ## What It Shows
 - classification modeling for hospital outcome analysis
@@ -20,7 +20,8 @@ This project was completed as part of my M.S. in Data Analytics program at Weste
 
 ## Results
 
-- Random Forest classification achieved test accuracy of `0.979`, precision of `0.963`, recall of `0.980`, F1-score of `0.971`, and ROC-AUC of `0.999` after tuning.
+- Random Forest classification achieved test accuracy of `0.980`, precision of `0.964`, recall of `0.982`, F1-score of `0.973`, and ROC-AUC of `0.999` after tuning.
+- A feature-timing sensitivity check showed that `Initial_days` drives most of the full model's signal. When that post-admission stay-length feature is excluded, ROC-AUC drops to `0.498`, so the classification workflow is best interpreted as discharge-time risk stratification rather than a pre-admission readmission predictor.
 - The clustering workflow used the Elbow Method to select `k = 3` as the optimal number of patient segments.
 - PCA visualization showed three distinguishable clusters with reasonable separation rather than randomly mixed groupings.
 - The resulting cluster profiles represented lower-risk younger patients with shorter stays, moderate-risk patients with longer stays and higher charges, and higher-risk older patients with more chronic conditions and higher additional charges.
