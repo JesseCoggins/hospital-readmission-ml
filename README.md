@@ -1,34 +1,30 @@
-# Hospital Readmission ML
+# Hospital readmission and patient segmentation
 
-## Overview
-This repo combines two machine learning workflows built from the hospital dataset: a supervised classification project and an unsupervised clustering and PCA project. Together, they show breadth across predictive modeling and pattern discovery in healthcare data.
+**When could a hospital use a readmission score to prioritize follow-up?** I trained a Random Forest on 10,000 hospital records and checked whether its strongest signal would be available when staff made the decision. The full model scored **0.999 ROC-AUC**. Removing length of stay dropped the score to **0.498**, near chance. That makes discharge planning the point at which I would evaluate the model for use.
 
-## Academic Context
-Completed during my M.S. in Data Analytics at Western Governors University (WGU), then packaged here as a public portfolio project. Screenshots from the original written submissions are preserved in `assets/task1-report-extracts/` and `assets/task2-report-extracts/`.
-
-## What It Shows
-- classification modeling for hospital outcome analysis
-- data preparation and encoded feature sets
-- clustering workflow for segmentation
-- PCA-based dimensionality reduction and visualization
-
-## Included Files
-- `notebooks/readmission_classification.ipynb`
-- `notebooks/readmission_clustering_pca.ipynb`
-- `data/medical_clean.csv`
-- `requirements.txt`
+[Inspect the classification and timing check](notebooks/readmission_classification.ipynb) · [Open the clinical clustering notebook](notebooks/readmission_clustering_pca.ipynb)
 
 ## Results
 
-- Random Forest classification achieved test accuracy of `0.980`, precision of `0.964`, recall of `0.982`, F1-score of `0.973`, and ROC-AUC of `0.999` after tuning.
-- A feature-timing sensitivity check showed that `Initial_days` drives most of the full model's signal. When that post-admission stay-length feature is excluded, ROC-AUC drops to `0.498`, so the classification workflow is best interpreted as discharge-time risk stratification rather than a pre-admission readmission predictor.
-- The final clinical clustering notebook uses seven continuous variables and seven binary indicators. It fits three K-Means groups and projects them into two dimensions with PCA.
-- The short-stay group averaged about 9 days and $3,212 in total charges. A second group averaged 60 days and $7,401. The oldest group averaged 74 years, and 95% reported high blood pressure. These are descriptive profiles. Readmission was not an input to clustering.
+| Held-out test result | With length of stay | Without length of stay |
+|---|---:|---:|
+| ROC-AUC | 0.999 | 0.498 |
+| Accuracy | 98.0% | 63.1% |
+| Recall for readmissions | 98.2% | 1.6% |
 
-See the [clinical clustering notebook](notebooks/readmission_clustering_pca.ipynb) to generate the elbow plot, PCA projection, and group means in their original units. The public notebook contains code only.
+The classifier used 7,000 training, 1,500 validation and 1,500 test records. I tuned the forest using cross-validation. Its full-model test precision was 96.4% and F1 was 0.973. The comparison above changes the interpretation of those numbers. Staff know the completed stay at discharge. A team deciding whom to contact at admission would need a model validated on information available then. The study measured classification performance. It did not test whether follow-up reduced readmissions.
 
-## Selected Visuals
+## What the clustering adds
 
-![Classification report visual](assets/task1-report-extracts/report_image_01.png)
+A separate analysis groups patients by similarities in stay, charges and health history. I standardized seven continuous measures, encoded seven yes/no indicators, inspected the elbow plot, and fit a three-group K-Means model. PCA displays the groups in two dimensions.
 
-![Clustering and PCA report visual](assets/task2-report-extracts/report_image_01.png)
+- One group averaged **9 days** in hospital and **$3,212** in total charges. Another averaged **60 days** and **$7,401**.
+- The oldest group averaged **74 years**, and 95% reported high blood pressure.
+
+Readmission was excluded from clustering. These averages describe differences in the hospital population and can guide questions about service use. Assigning readmission risk to a group would require a separate outcome analysis.
+
+## Review or rerun
+
+Both notebooks use the [included hospital dataset](data/medical_clean.csv). Install the [requirements](requirements.txt) in a Jupyter environment and use `notebooks/` as the working directory. The classification notebook includes saved evaluation output. The public clustering notebook contains code only and generates its group summaries and plots when run. [Classification report figures](assets/task1-report-extracts/) · [Clustering report figures](assets/task2-report-extracts/)
+
+*WGU M.S. in Data Analytics coursework, D603 Machine Learning.*
