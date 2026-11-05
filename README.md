@@ -41,4 +41,8 @@ The near-chance ROC-AUC without length of stay limits the interpretation of the 
 
 Both notebooks use the [included hospital dataset](data/medical_clean.csv). For the reproduced held-out evaluation and sensitivity check, install [requirements-verified.txt](requirements-verified.txt) (Python 3.13.1). Otherwise install the [requirements](requirements.txt) in a Jupyter environment and use `notebooks/` as the working directory. The classification notebook retains the saved model-selection summary; per-fit progress logs are omitted. The clustering notebook includes a saved aggregate profile table; other summaries and plots are regenerated when run. [Classification report figures](assets/task1-report-extracts/) · [Clustering report figures](assets/task2-report-extracts/)
 
+## Data and environment
+
+[Data origin and reuse notes](data/README.md). The [verified evaluation environment](requirements-verified.txt) and its scope are described above.
+
 *WGU M.S. in Data Analytics coursework, D603 Machine Learning.*
