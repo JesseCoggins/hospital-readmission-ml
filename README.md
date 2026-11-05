@@ -23,10 +23,6 @@ A separate analysis groups patients by similarities in stay, charges and health 
 
 Readmission was excluded from clustering. These averages describe differences in the hospital population and can guide questions about service use. Assigning readmission risk to a group would require a separate outcome analysis.
 
-## Coursework and portfolio versions
-
-A fresh November 2026 run reproduced the submitted classifier’s 97.9% accuracy, 96.3% precision, 98.0% recall, 0.971 F1 and 0.999 ROC-AUC. The earlier public saved output reported 98.0% accuracy. The current notebook saves the verified rerun and identifies its environment; the difference is not presented as a model improvement. The portfolio-added check without length of stay scored 0.492 ROC-AUC in this run (the earlier saved output was 0.498). Both are near chance. The original coursework remains unchanged.
-
 ## Review or rerun
 
 Both notebooks use the [included hospital dataset](data/medical_clean.csv). For the verified numerical environment, install [requirements-verified.txt](requirements-verified.txt) (Python 3.13.1). Otherwise install the [requirements](requirements.txt) in a Jupyter environment and use `notebooks/` as the working directory. The classification notebook includes saved evaluation output. The public clustering notebook contains code only and generates its group summaries and plots when run. [Classification report figures](assets/task1-report-extracts/) · [Clustering report figures](assets/task2-report-extracts/)
