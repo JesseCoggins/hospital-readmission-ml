@@ -43,6 +43,7 @@ Both notebooks use the [included hospital dataset](data/medical_clean.csv). For 
 
 ## Data and environment
 
-[Data origin and reuse notes](data/README.md). The [verified evaluation environment](requirements-verified.txt) and its scope are described above.
+Data: WGU hospital dataset; [source notes](data/README.md).  
+Install: `python -m pip install -r requirements.txt`; [environment details](requirements-verified.txt).
 
 *WGU M.S. in Data Analytics coursework, D603 Machine Learning.*
