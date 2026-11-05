@@ -2,6 +2,10 @@
 
 **What can hospital records reveal about readmission and patient groups?** I trained a Random Forest on 10,000 hospital records and separately used K-Means and PCA to explore patient segments. The classifier achieved **97.9% held-out accuracy** and **0.999 ROC-AUC**. Its inputs include completed length of stay, so the result applies to discharge-time risk analysis.
 
+![Readmission ROC curves with and without completed length of stay alongside the full-model confusion matrix](assets/readmission-model-evaluation.png)
+
+*The full model includes completed length of stay. Removing that feature lowers held-out ROC-AUC from 0.999 to 0.492.*
+
 [Inspect the classification notebook](notebooks/readmission_classification.ipynb) · [Open the clinical clustering notebook](notebooks/readmission_clustering_pca.ipynb)
 
 ## Results
@@ -39,7 +43,7 @@ The near-chance ROC-AUC without length of stay limits the interpretation of the 
 
 ## Run it yourself
 
-Both notebooks use the [included hospital dataset](data/medical_clean.csv). For the reproduced held-out evaluation and sensitivity check, install [requirements-verified.txt](requirements-verified.txt) (Python 3.13.1). Otherwise install the [requirements](requirements.txt) in a Jupyter environment and use `notebooks/` as the working directory. The classification notebook retains the saved model-selection summary; per-fit progress logs are omitted. The clustering notebook includes a saved aggregate profile table; other summaries and plots are regenerated when run. [Classification report figures](assets/classification-report-figures/) · [Clustering report figures](assets/clustering-report-figures/)
+Install the [requirements](requirements.txt) and use `notebooks/` as the working directory. Both notebooks include saved results, plots and aggregate cluster profiles. The classification notebook retains the original model-selection summary; rerunning that cell repeats the full search. Saved outputs focus on model results and summaries; row previews and long unique-value listings are omitted to keep the notebooks readable. [Classification report figures](assets/classification-report-figures/) · [Clustering report figures](assets/clustering-report-figures/)
 
 ## Data and environment
 

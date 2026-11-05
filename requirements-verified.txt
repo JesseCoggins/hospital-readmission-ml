@@ -1,7 +1,8 @@
-# Validation environment and scope
-# Selected-model held-out evaluation and the length-of-stay sensitivity check executed on Python
-# 3.13.1. Full model ROC-AUC 0.999; removing completed length of stay gives approximately 0.492.
-# Grid-search results are retained from the original model-selection run.
+# Validation environment: Python 3.13.1.
+# Baseline fitting, selected-model evaluation, feature-timing check and clustering
+# were executed, including the saved evaluation, elbow and PCA plots.
+# Full model ROC-AUC 0.999; without completed length of stay, approximately 0.492.
+# The saved grid-search result is retained from the original model-selection run.
 # Direct package versions used for these checks:
 numpy==2.2.2
 pandas==2.2.3
