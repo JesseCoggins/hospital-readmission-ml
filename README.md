@@ -23,7 +23,7 @@ A separate analysis groups patients by similarities in stay, charges and health 
 - One group averaged **9 days** in hospital and **$3,212** in total charges. Another averaged **60 days** and **$7,401**.
 - The oldest group averaged **74 years**, and 95% reported high blood pressure.
 
-Readmission was excluded from clustering. These averages describe differences in the hospital population and can guide questions about service use. Assigning readmission risk to a group would require a separate outcome analysis.
+I left readmission out of the clustering. These averages describe differences in the hospital population and can guide questions about service use. Assigning readmission risk to a group would require a separate outcome analysis.
 
 ## Additional validation: feature timing
 
@@ -35,11 +35,11 @@ Completed length of stay (`Initial_days`) is available at discharge. A sensitivi
 | Accuracy | 97.9% | 63.1% |
 | Recall for readmissions | 98.0% | 1.8% |
 
-The near-chance ROC-AUC without length of stay limits the interpretation of the full model. A team deciding whom to contact at admission would need a model validated on information available then. The study measured classification performance; it did not test whether follow-up reduced readmissions.
+The near-chance ROC-AUC without length of stay limits the interpretation of the full model. A team deciding whom to contact at admission would need a model validated on information available then. I measured how well the model classified readmissions. I did not test whether follow-up reduced readmissions.
 
-## Review or rerun
+## Run it yourself
 
-Both notebooks use the [included hospital dataset](data/medical_clean.csv). For the reproduced held-out evaluation and sensitivity check, install [requirements-verified.txt](requirements-verified.txt) (Python 3.13.1). Otherwise install the [requirements](requirements.txt) in a Jupyter environment and use `notebooks/` as the working directory. The classification notebook retains the saved model-selection summary; per-fit progress logs are omitted. The clustering notebook includes a saved aggregate profile table; other summaries and plots are regenerated when run. [Classification report figures](assets/task1-report-extracts/) · [Clustering report figures](assets/task2-report-extracts/)
+Both notebooks use the [included hospital dataset](data/medical_clean.csv). For the reproduced held-out evaluation and sensitivity check, install [requirements-verified.txt](requirements-verified.txt) (Python 3.13.1). Otherwise install the [requirements](requirements.txt) in a Jupyter environment and use `notebooks/` as the working directory. The classification notebook retains the saved model-selection summary; per-fit progress logs are omitted. The clustering notebook includes a saved aggregate profile table; other summaries and plots are regenerated when run. [Classification report figures](assets/classification-report-figures/) · [Clustering report figures](assets/clustering-report-figures/)
 
 ## Data and environment
 
